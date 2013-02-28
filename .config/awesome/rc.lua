@@ -141,6 +141,7 @@ batbar_with_margin:set_bottom(bar_margin_bottom)
 cpuicon = wibox.widget.imagebox()
 cpuicon:set_image(beautiful.cpu)
 cpubar = awful.widget.progressbar()
+cputemp = wibox.widget.textbox()
 cpubar:set_width(bar_width)
 cpubar:set_height(bar_height)
 cpubar:set_vertical(false)
@@ -157,17 +158,18 @@ vicious.register(cpubar, vicious.widgets.cpu,
         end
         return args[1]
     end, 5)
+vicious.register(cputemp, vicious.widgets.thermal, "$1°C", 10,"thermal_zone0")
 cpubar_with_margin = wibox.layout.margin()
 cpubar_with_margin:set_widget(cpubar)
 cpubar_with_margin:set_top(bar_margin_top)
 cpubar_with_margin:set_bottom(bar_margin_bottom)
 
 cpubar:buttons(awful.util.table.join(
-    awful.button({ }, 1, function () awful.util.spawn("urxvtc -e htop", false) end)
+    awful.button({ }, 1, function () awful.util.spawn("urxvtc -name \"htop\" -e htop", false) end)
 ))
 
 cpuicon:buttons(awful.util.table.join(
-    awful.button({ }, 1, function () awful.util.spawn("urxvtc -e htop", false) end)
+    awful.button({ }, 1, function () awful.util.spawn("urxvtc -name \"htop\" -e htop", false) end)
 ))
 -- }}}
 
@@ -255,11 +257,11 @@ function (widget, args)
     end, 15)
 
 mpdwidget:buttons(awful.util.table.join(
-    awful.button({ }, 1, function () awful.util.spawn("urxvtc -e ncmpcpp", false) end)
+    awful.button({ }, 1, function () awful.util.spawn("urxvtc -name \"ncmpcpp\" -e ncmpcpp", false) end)
 ))
 
 mpdicon:buttons(awful.util.table.join(
-    awful.button({ }, 1, function () awful.util.spawn("urxvtc -e ncmpcpp", false) end)
+    awful.button({ }, 1, function () awful.util.spawn("urxvtc -name \"ncmpcpp\" -e ncmpcpp", false) end)
 ))
 -- }}}
 
@@ -292,14 +294,14 @@ vicious.register(pkgwidget, vicious.widgets.pkg,
 pkgwidget:buttons(awful.util.table.join(
     awful.button({ }, 1, 
         function () 
-            awful.util.spawn("urxvtc -geometry 80x20 -e bash -c \"sudo pacman -Syu && echo '\nAktualisierung abgeschlossen. Beim nächsten Tastendruck schließt das Fenster.' && read\"", false) 
+            awful.util.spawn("urxvtc -name \"pacman\" -geometry 80x20 -e bash -c \"sudo pacman -Syu && echo '\nAktualisierung abgeschlossen. Beim nächsten Tastendruck schließt das Fenster.' && read\"", false) 
         end)
 ))
 
 pkgicon:buttons(awful.util.table.join(
     awful.button({ }, 1, 
     function () 
-        awful.util.spawn("urxvtc -e bash -c \"sudo pacman -Syu && echo '\nAktualisierung abgeschlossen. Beim nächsten Tastendruck schließt das Fenster.' && read\"", false) 
+        awful.util.spawn("urxvtc -name \"pacman\" -geometry 80x20 -e bash -c \"sudo pacman -Syu && echo '\nAktualisierung abgeschlossen. Beim nächsten Tastendruck schließt das Fenster.' && read\"", false) 
     end)
 ))
 -- }}}
@@ -321,13 +323,8 @@ vicious.register(mailwidget, vicious.widgets.gmail,
 
 mailwidget:buttons(awful.util.table.join(
     awful.button({ }, 1, 
-        function ()
-            local f=io.open("/home/underwood/.thunderbird/ivnt5n9x.default/lock", "r")
-            if f~=nil then 
-                io.close(f)
-            else
-                awful.util.spawn("thunderbird")
-            end
+        function () 
+            awful.util.spawn("urxvtc -name \"mutt\" -e \"mutt\"", false) 
             local screen = mouse.screen
             awful.tag.viewonly(tags[screen][1])
         end)) )
@@ -335,12 +332,7 @@ mailwidget:buttons(awful.util.table.join(
 mailicon:buttons(awful.util.table.join(
     awful.button({ }, 1, 
         function ()
-            local f=io.open("/home/underwood/.thunderbird/ivnt5n9x.default/lock", "r")
-            if f~=nil then 
-                io.close(f)
-            else
-                awful.util.spawn("thunderbird")
-            end
+            awful.util.spawn("urxvtc -name \"mutt\" -e \"mutt\"", false) 
             local screen = mouse.screen
             awful.tag.viewonly(tags[screen][1])
         end)) )
@@ -591,6 +583,8 @@ for s = 1, screen.count() do
     bottom_left_layout:add(space)
     bottom_left_layout:add(space)
     bottom_left_layout:add(cpubar_with_margin)
+    bottom_left_layout:add(space)
+    bottom_left_layout:add(cputemp)
     bottom_left_layout:add(space)
     bottom_left_layout:add(separator_right)
     
@@ -865,17 +859,18 @@ awful.rules.rules = {
                      focus = true,
                      keys = clientkeys,
                      buttons = clientbuttons } },
+    { rule = { instance = "htop" },
+      properties = { floating = true } },
+    { rule = { instance = "mutt" },
+      properties = { tag = tags[1][1] } },
+    { rule = { instance = "pacman" },
+      properties = { floating = true } },
     { rule = { class = "MPlayer" },
       properties = { floating = true } },
     { rule = { class = "Thunderbird" },
       properties = { tag = tags[1][1] } },
-    { rule = { class = "pinentry" },
-      properties = { floating = true } },
     { rule = { class = "gimp" },
       properties = { tag = tags[1][5] } },
-    -- Set Firefox to always map on tags number 2 of screen 1.
-    -- { rule = { class = "Firefox" },
-    --   properties = { tag = tags[1][2] } },
 }
 -- }}}
 
