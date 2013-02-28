@@ -1,4 +1,4 @@
-':/home/underwood
-a:/var/local/aur
-p:/srv/http
 h:/home/underwood
+':/home/underwood
+p:/srv/http
+a:/var/local/aur
