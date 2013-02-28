@@ -1,0 +1,36 @@
+export BROWSER=chromium
+
+#Prompt:
+export DONTSETRPROMPT=1
+local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
+
+local clock="%{$fg[white]%}[%*]%{$reset_color%}"
+local user_host='%{$terminfo[bold]$fg[blue]%}%n@%{$reset_color$fg[white]%}%m%{$reset_color%}'
+local current_dir='%{$terminfo[bold]$fg[green]%} %~%{$reset_color%}'
+
+PROMPT="%{$fg[blue]%}╭─%{$reset_color%}${user_host} ${clock} ${current_dir}
+%{$fg[blue]%}╰─%B$%b%{$reset_color%} "
+
+#Aliase:
+alias pax='ps ax | grep -v "grep" | grep'
+alias c='clear'
+alias -g L=' | less'
+alias -g G=' | grep'
+alias -g S=' 2> /dev/null &'
+alias -s png='sxiv'
+alias -s jpg='sxiv'
+alias -s pdf='zathura'
+alias -s ps='zathura'
+alias -s avi='mplayer'
+alias -s mpeg='mplayer'
+alias -s mp4='mplayer'
+alias -s mp3='mplayer'
+alias -s ogg='mplayer'
+alias -s oga='mplayer'
+alias -s ogv='mplayer'
+alias -s flac='mplayer'
+alias -s htm='vim'
+alias -s html='vim'
+alias -s php='vim'
+alias -s css='vim'
+alias -s js='vim'

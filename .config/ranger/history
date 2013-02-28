@@ -1,0 +1,10 @@
+set preview_images True
+set show_hidden True
+set show_hidden true
+delete 
+cd .config/ranger/
+man rifle
+!ba
+
+yy
+ext
