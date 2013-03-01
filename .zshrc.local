@@ -11,6 +11,9 @@ local current_dir='%{$terminfo[bold]$fg[green]%} %~%{$reset_color%}'
 PROMPT="%{$fg[blue]%}╭─%{$reset_color%}${user_host} ${clock} ${current_dir}
 %{$fg[blue]%}╰─%B$%b%{$reset_color%} "
 
+# Z:
+. /etc/profile.d/z.sh
+
 #Aliase:
 alias pax='ps ax | grep -v "grep" | grep'
 alias c='clear'
