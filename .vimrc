@@ -15,17 +15,6 @@ set history=50                  " keep 50 lines of command line history
 set ruler                       " show the cursor position all the time
 syntax on
 
-" My own changes: "
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-Bundle 'minibufexpl.vim'
-Bundle 'The-NERD-tree'
-Bundle 'joonty/vim-phpqa.git'
-Bundle 'SuperTab'
-Bundle 'Command-T'
-
 filetype plugin indent on
 
 set tabstop=4
@@ -36,23 +25,18 @@ set number
 set hlsearch
 set incsearch
 set formatoptions=c,q,r
-set background=dark
 set browsedir=current
 set autoindent
 set smartindent
 set scrolloff=5
 set foldmethod=syntax
 set nofoldenable
-set colorcolumn=81
-colors evening
 
 let g:SuperTabDefaultCompletionType = ""
 
 " Suffixes that get lower priority when doing tab completion for filenames.
 " These are files we are not likely to want to edit or read.
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
-
-nnoremap <F3> :NERDTreeToggle<CR>
 
 " To avoid weird pasting from other applications than vim.
 nnoremap <F2> :set invpaste paste?<CR>
@@ -64,8 +48,3 @@ if has('gui_running')
   map <S-Insert> <MiddleMouse>
   map! <S-Insert> <MiddleMouse>
 endif
-
-" LaTeX:
-set grepprg=grep\ -nH\ $*
-let g:tex_flavor = "latex"
-set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after

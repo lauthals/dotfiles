@@ -1,0 +1,16 @@
+[alias]
+	s = status -s
+	lg = log --oneline --graph --decorate
+[user]
+	email = sebastian.weissborn@gmail.com
+	name = lauthals
+[core]
+	autocrlf = input
+[color]
+	ui = true
+[push]
+	default = simple
+[pull]
+	rebase = true
+[rerere]
+	enabled = true
