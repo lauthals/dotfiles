@@ -1,61 +1,47 @@
-!bettre font rendering in fedora
-!Xft.lcdfilter: lcddefault
+*background: #002b36
+*foreground: #657b83
+*fading: 100
+*fadeColor: #000000
+*cursorColor: #93a1a1
+*pointerColorBackground: #586e75
+*pointerColorForeground: #93a1a1
 
-!TomorrowNightEighties
-#define t_background        #2d2d2d
-#define t_current_line      #393939
-#define t_selection      	#515151
-#define t_foreground      	#cccccc
-#define t_comment	     	#999999
-#define t_red		     	#f2777a
-#define t_orange	     	#f99157
-#define t_yellow        	#ffcc66
-#define t_green	        	#99cc99
-#define t_aqua	        	#66cccc
-#define t_blue	        	#9999ff
-#define t_purple        	#cc99cc
+!! black dark/light
+*color0: #073642
+*color8: #002b36
 
+!! red dark/light
+*color1: #dc322f
+*color9: #cb4b16
 
-*.foreground:   #cccccc
-*.background:   #2d2d2d
-*.cursorColor:  #aeafad
+!! green dark/light
+*color2: #859900
+*color10: #586e75
 
-! Black / Grey
-*.color0:       #000000
-*.color8:       #666666
+!! yellow dark/light
+*color3: #b58900
+*color11: #657b83
 
-! Red / Bright Red
-*.color1:       t_red
-*.color9:       #FF3334
+!! blue dark/light
+*color4: #268bd2
+*color12: #839496
 
-! Green + Bright Green
-*.color2:       t_green
-*.color10:      #9ec400
+!! magenta dark/light
+*color5: #d33682
+*color13: #6c71c4
 
-! Yellow (Orange) + Bright Yellow (Yellow)
-*.color3:       t_orange
-*.color11:      t_yellow
+!! cyan dark/light
+*color6: #2aa198
+*color14: #93a1a1
 
-! Blue + Bright Blue
-*.color4:       t_blue
-*.color12:      t_blue
+!! white dark/light
+*color7: #eee8d5
+*color15: #fdf6e3
 
-! Magenta (Purple) + Bright Magenta
-*.color5:       t_purple
-*.color13:      #b777e0
-
-! Cyan (Aqua) + Bright Cyan
-*.color6:       t_aqua
-*.color14:      #54ced6
-
-! Light Grey (Selection) + White (Current Line)
-*.color7:       t_selection
-*.color15:      t_current_line
 
 URxvt*saveLines:	20480\302\240
 URxvt*matcher*button:	1
 URxvt*secondaryScroll:	true
-URxvt*cursorColor:	t_green
 URxvt*perl-ext-common:	default,matcher,searchable-scrollback
 URxvt*blurRadius:	20
 URxvt*font: -misc-fixed-medium-r-normal--15-140-75-75-c-90-iso8859-1
@@ -63,5 +49,6 @@ URxvt*buffered:	true
 URxvt*boldFont:	xft:xos4 Terminus:bold:pixelsize=14:antialias=true
 URxvt*fading:	15
 URxvt*scrollBar:	false
-
+URxvt*urlLauncher: qutebrowser
 URxvt.letterSpace: 0
+
