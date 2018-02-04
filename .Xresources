@@ -1,43 +1,44 @@
-*background: #002b36
-*foreground: #657b83
 *fading: 100
 *fadeColor: #000000
-*cursorColor: #93a1a1
 *pointerColorBackground: #586e75
 *pointerColorForeground: #93a1a1
 
-!! black dark/light
-URxvt*color0: #073642
-URxvt*color8: #002b36
+! special
+*.foreground:   #f8f8f2
+*.background:   #272822
+*.cursorColor:  #f8f8f2
 
-!! red dark/light
-URxvt*color1: #dc322f
-URxvt*color9: #cb4b16
+! black
+*.color0:       #272822
+*.color8:       #75715e
 
-!! green dark/light
-URxvt*color2: #859900
-URxvt*color10: #586e75
+! red
+*.color1:       #f92672
+*.color9:       #f92672
 
-!! yellow dark/light
-URxvt*color3: #b58900
-URxvt*color11: #657b83
+! green
+*.color2:       #a6e22e
+*.color10:      #a6e22e
 
-!! blue dark/light
-URxvt*color4: #268bd2
-URxvt*color12: #839496
+! yellow
+*.color3:       #f4bf75
+*.color11:      #f4bf75
 
-!! magenta dark/light
-URxvt*color5: #d33682
-URxvt*color13: #6c71c4
+! blue
+*.color4:       #66d9ef
+*.color12:      #66d9ef
 
-!! cyan dark/light
-URxvt*color6: #2aa198
-URxvt*color14: #93a1a1
+! magenta
+*.color5:       #ae81ff
+*.color13:      #ae81ff
 
-!! white dark/light
-URxvt*color7: #eee8d5
-URxvt*color15: #fdf6e3
+! cyan
+*.color6:       #a1efe4
+*.color14:      #a1efe4
 
+! white
+*.color7:       #f8f8f2
+*.color15:      #f9f8f5
 
 URxvt*saveLines:	20480\302\240
 URxvt*matcher*button:	1
