@@ -13,6 +13,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'tpope/vim-fugitive'
+Plugin 'mileszs/ack.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 
@@ -94,6 +95,8 @@ nnoremap <leader><Space> :noh<CR>
 map <leader>n :NERDTreeToggle<CR>
 map <C-y> :bn<CR>
 nmap <silent> <leader>cc <leader>c<space>
+inoremap <C-Up> <C-t>
+inoremap <C-Down> <C-d>
 
 " configure CtrlP
 " Setup some default ignores
