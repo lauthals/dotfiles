@@ -170,6 +170,9 @@ zstyle ':completion:*:my-accounts' users-hosts $my_accounts
 
 ## ignore ~/.ssh/known_hosts entries
 #alias insecssh='ssh -o "StrictHostKeyChecking=no" -o "UserKnownHostsFile=/dev/null" -o "PreferredAuthentications=keyboard-interactive"'
+if type nvim > /dev/null; then
+    alias vim=nvim
+fi
 
 
 ## global aliases (for those who like them) ##
