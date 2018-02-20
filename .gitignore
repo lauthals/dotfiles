@@ -1,0 +1,11 @@
+*
+
+!.Xresources
+!.config/awesome/*
+!.config/nvim/*
+!.gitconfig
+!.gitignore
+!.oni/*
+!.vimrc
+!.weechat/*.conf
+!.zshrc*
