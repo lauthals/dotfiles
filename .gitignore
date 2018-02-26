@@ -6,6 +6,7 @@
 !.gitconfig
 !.gitignore
 !.oni/*
+!.tmux.conf
 !.vimrc
 !.weechat/*.conf
 !.zshrc*
