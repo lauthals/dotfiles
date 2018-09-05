@@ -45,8 +45,9 @@ URxvt*matcher*button:	1
 URxvt*secondaryScroll:	true
 URxvt*perl-ext-common:	default,matcher,searchable-scrollback
 URxvt*blurRadius:	20
-URxvt*font: -misc-fixed-medium-r-normal--15-140-75-75-c-90-iso8859-1
+!URxvt*font: -misc-fixed-medium-r-normal--15-140-75-75-c-90-iso8859-1
 URxvt*buffered:	true
+URxvt*font:	xft:xos4 Terminus:bold:pixelsize=14:antialias=true
 URxvt*boldFont:	xft:xos4 Terminus:bold:pixelsize=14:antialias=true
 URxvt*fading:	15
 URxvt*scrollBar:	false
