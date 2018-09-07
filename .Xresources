@@ -40,15 +40,15 @@
 *.color7:       #f8f8f2
 *.color15:      #f9f8f5
 
+URxvt*termName: rxvt-unicode-256color
 URxvt*saveLines:	20480\302\240
 URxvt*matcher*button:	1
 URxvt*secondaryScroll:	true
-URxvt*perl-ext-common:	default,matcher,searchable-scrollback
+URxvt*perl-ext-common:	default,matcher,searchable-scrollback,resize-font
 URxvt*blurRadius:	20
-!URxvt*font: -misc-fixed-medium-r-normal--15-140-75-75-c-90-iso8859-1
 URxvt*buffered:	true
-URxvt*font:	xft:xos4 Terminus:bold:pixelsize=14:antialias=true
-URxvt*boldFont:	xft:xos4 Terminus:bold:pixelsize=14:antialias=true
+URxvt*font:	xft:xos4 Terminus:pixelsize=18
+URxvt*boldFont:	xft:xos4 Terminus:bold:pixelsize=18
 URxvt*fading:	15
 URxvt*scrollBar:	false
 URxvt*urlLauncher: qutebrowser
