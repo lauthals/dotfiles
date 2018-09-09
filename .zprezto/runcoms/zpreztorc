@@ -36,6 +36,7 @@ zstyle ':prezto:load' pmodule \
   'utility' \
   'completion' \
   'pacman' \
+  'ssh' \
   'git' \
   'archive' \
   'tmux' \
@@ -164,7 +165,7 @@ zstyle ':prezto:module:prompt' theme 'giddie'
 #
 
 # Set the SSH identities to load into the agent.
- #zstyle ':prezto:module:ssh:load' identities 'id_rsa' 'id_rsa_uber' 'id_rsa_github'
+zstyle ':prezto:module:ssh:load' identities 'id_rsa' 'id_rsa_uber' 'id_rsa_github'
 
 #
 # Syntax Highlighting
