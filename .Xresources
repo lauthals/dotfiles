@@ -47,8 +47,8 @@ URxvt*secondaryScroll:	true
 URxvt*perl-ext-common:	default,matcher,searchable-scrollback,resize-font
 URxvt*blurRadius:	20
 URxvt*buffered:	true
-URxvt*font:	xft:xos4 Terminus:pixelsize=18
-URxvt*boldFont:	xft:xos4 Terminus:bold:pixelsize=18
+URxvt*font:	-xos4-terminus-medium-*-*-*-18-*-*-*-*-*-*-*
+URxvt*boldFont:	-xos4-terminus-bold-*-*-*-18-*-*-*-*-*-*-*
 URxvt*fading:	15
 URxvt*scrollBar:	false
 URxvt*urlLauncher: qutebrowser
