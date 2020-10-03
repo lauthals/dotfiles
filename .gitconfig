@@ -6,6 +6,7 @@
 	name = lauthals
 [core]
 	autocrlf = input
+	editor = vim
 [color]
 	ui = true
 [push]
