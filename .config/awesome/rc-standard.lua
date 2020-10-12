@@ -215,7 +215,7 @@ globalkeys = awful.util.table.join(
     awful.key({ altkey }, "p", function() os.execute("screenshot") end),
 
     -- Hotkeys
-    awful.key({ modkey,           }, "d",      hotkeys_popup.show_help,
+    awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
               {description="show help", group="awesome"}),
     -- Tag browsingatom
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev,
@@ -224,6 +224,12 @@ globalkeys = awful.util.table.join(
               {description = "view next", group = "tag"}),
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore,
               {description = "go back", group = "tag"}),
+
+    -- Non-empty tag browsing
+    awful.key({ modkey, altkey }, "Left", function () lain.util.tag_view_nonempty(-1) end,
+              {description = "view  previous nonempty", group = "tag"}),
+    awful.key({ modkey, altkey }, "Right", function () lain.util.tag_view_nonempty(1) end,
+              {description = "view  previous nonempty", group = "tag"}),
 
     -- Default client focus
     awful.key({ modkey,           }, "j",
@@ -244,9 +250,9 @@ globalkeys = awful.util.table.join(
               {description = "swap with next client by index", group = "client"}),
     awful.key({ modkey, "Shift"   }, "k", function () awful.client.swap.byidx( -1)    end,
               {description = "swap with previous client by index", group = "client"}),
-    awful.key({ modkey, altkey }, "j", function () awful.screen.focus_relative( 1) end,
+    awful.key({ modkey, "Control" }, "j", function () awful.screen.focus_relative( 1) end,
               {description = "focus the next screen", group = "screen"}),
-    awful.key({ modkey, altkey }, "k", function () awful.screen.focus_relative(-1) end,
+    awful.key({ modkey, "Control" }, "k", function () awful.screen.focus_relative(-1) end,
               {description = "focus the previous screen", group = "screen"}),
     awful.key({ modkey,           }, "u", awful.client.urgent.jumpto,
               {description = "jump to urgent client", group = "client"}),
@@ -276,15 +282,15 @@ globalkeys = awful.util.table.join(
               { description = "decrease useless gap size", group = "useless gap"}),
 
     -- Dynamic tagging
-    awful.key({ modkey, altkey }, "n", function () lain.util.add_tag() end,
+    awful.key({ modkey, "Shift" }, "n", function () lain.util.add_tag() end,
               { description = "create new tag", group = "dynamic tagging"}),
-    awful.key({ modkey, altkey }, "r", function () lain.util.rename_tag() end,
+    awful.key({ modkey, "Shift" }, "r", function () lain.util.rename_tag() end,
               { description = "rename tag", group = "dynamic tagging"}),
-    awful.key({ modkey, altkey }, "Left", function () lain.util.move_tag(-1) end,
+    awful.key({ modkey, "Shift" }, "Left", function () lain.util.move_tag(-1) end,
               { description = "move tag left", group = "dynamic tagging"}),  -- move to previous tag
-    awful.key({ modkey, altkey }, "Right", function () lain.util.move_tag(1) end,
+    awful.key({ modkey, "Shift" }, "Right", function () lain.util.move_tag(1) end,
               { description = "move tag right", group = "dynamic tagging"}),  -- move to next tag
-    awful.key({ modkey, altkey }, "d", function () lain.util.delete_tag() end,
+    awful.key({ modkey, "Shift" }, "d", function () lain.util.delete_tag() end,
               { description = "delete tag", group = "dynamic tagging"}),
 
     -- Standard program
@@ -373,7 +379,7 @@ globalkeys = awful.util.table.join(
     --]]
 
     -- User programs
-    -- awful.key({ modkey }, "q", function () awful.spawn(browser) end),
+    awful.key({ modkey }, "q", function () awful.spawn(browser) end),
     awful.key({ modkey }, "a", function () awful.spawn(guieditor) end),
 
     -- Default
@@ -388,7 +394,7 @@ globalkeys = awful.util.table.join(
 		end)
     --]]
     -- Prompt
-    awful.key({ modkey }, "s", function () awful.screen.focused().mypromptbox:run() end,
+    awful.key({ modkey }, "r", function () awful.screen.focused().mypromptbox:run() end,
               {description = "run prompt", group = "launcher"}),
 
     awful.key({ modkey }, "x",
