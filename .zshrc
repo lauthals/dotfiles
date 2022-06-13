@@ -1,1 +1,1 @@
-/home/underwood/.zprezto/runcoms/zshrc
+.zprezto/runcoms/zshrc

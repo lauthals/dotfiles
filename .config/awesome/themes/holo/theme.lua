@@ -15,7 +15,7 @@ local os     = { getenv = os.getenv }
 local theme                                     = {}
 theme.default_dir                               = require("awful.util").get_themes_dir() .. "default"
 theme.icon_dir                                  = os.getenv("HOME") .. "/.config/awesome/themes/holo/icons"
-theme.wallpaper                                 = os.getenv("HOME") .. "/.config/awesome/themes/holo/wall.png"
+theme.wallpaper                                 = os.getenv("HOME") .. "/.config/awesome/themes/holo/wall.jpg"
 theme.font                                      = "Inconsolata"
 theme.taglist_font                              = "Inconsolata Regular 10"
 theme.fg_normal                                 = "#FFFFFF"

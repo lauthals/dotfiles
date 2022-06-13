@@ -60,7 +60,7 @@ run_once({ "unclutter -root" }) -- entries must be comma-separated
 -- }}}
 
 -- {{{ Variable definitions
-local chosen_theme = "holo"
+local chosen_theme = "multicolor"
 local modkey       = "Mod4"
 local altkey       = "Mod1"
 local terminal     = "urxvt"
@@ -70,7 +70,7 @@ local browser      = "qutebrowser"
 local guieditor    = "code"
 
 awful.util.terminal = terminal
-awful.util.tagnames = { "1", "2", "3", "4", "5" }
+awful.util.tagnames = { "1: term", "2: net", "3: code", "4: db", "5: skype" }
 awful.layout.layouts = {
     awful.layout.suit.tile,
     -- awful.layout.suit.tile.left,
@@ -169,9 +169,18 @@ local myawesomemenu = {
     { "restart", awesome.restart },
     { "quit", function() awesome.quit() end }
 }
+
+local quickfilemenu = {
+    { "Darebee / stretching", function() awful.util.spawn("zathura /mnt/hubble/Documents/Darebee/04-everyday-stretching-workout.pdf") end },
+    { "Darebee / totals", function() awful.util.spawn("zathura /mnt/hubble/Documents/Darebee/01-totals.pdf") end },
+    { "Darebee / gravity", function() awful.util.spawn("zathura /mnt/hubble/Documents/Darebee/02-30-days-of-gravity.pdf") end },
+    { "Darebee / power up", function() awful.util.spawn("zathura /mnt/hubble/Documents/Darebee/03-power-up.pdf") end }
+}
+
 awful.util.mymainmenu = freedesktop.menu.build({
     icon_size = beautiful.menu_height or 16,
     before = {
+        { "Quick Files", quickfilemenu },
         { "Awesome", myawesomemenu, beautiful.awesome_icon },
         -- other triads can be put here
     },
@@ -518,11 +527,17 @@ awful.rules.rules = {
       properties = { titlebars_enabled = true } },
 
     -- Set Firefox to always map on the first tag on screen 1.
-    { rule = { class = "Firefox" },
-      properties = { screen = 1, tag = awful.util.tagnames[1] } },
+    { rule = { class = "firefox" },
+      properties = { screen = 1, tag = awful.util.tagnames[2] } },
 
-    { rule = { class = "Gimp", role = "gimp-image-window" },
-          properties = { maximized = true } },
+    { rule_any = { class = {"code-oss", "code"} },
+          properties = { screen = 1, tag = awful.util.tagnames[3] } },
+
+    { rule = { class = "DBeaver" },
+          properties = { screen = 1, tag = awful.util.tagnames[4] } },
+
+    { rule = { class = "Skype" },
+          properties = { screen = 1, tag = awful.util.tagnames[5] } },
 }
 -- }}}
 
