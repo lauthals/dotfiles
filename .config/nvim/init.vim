@@ -4,7 +4,7 @@ set nocompatible                " Use Vim defaults instead of 100% vi compatibil
 
 filetype off
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.config/nvim/bundle/Vundle.vim
 call vundle#begin()
 
 " let Vundle manage Vundle, required
