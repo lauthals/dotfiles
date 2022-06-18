@@ -3,6 +3,8 @@
 !.Xresources
 !.config/awesome/*
 !.config/nvim/*
+!.config/yadm/*
+!.config/dconf/settings.ini
 !.gitconfig
 !.gitignore
 !.oni/*
