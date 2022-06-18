@@ -1,9 +1,14 @@
 *
 
 !.Xresources
+!.config/
+!.config/awesome/
 !.config/awesome/*
+!.config/nvim/
 !.config/nvim/*
+!.config/yadm/
 !.config/yadm/*
+!.config/dconf/
 !.config/dconf/settings.ini
 !.gitconfig
 !.gitignore
