@@ -52,11 +52,10 @@ URxvt.keysym.M-u: perl:url-select:select_next
 URxvt.url-select.underline: true
 URxvt*blurRadius:	20
 URxvt*buffered:	true
-URxvt*font:	xft:Terminus:size=14
-URxvt*boldFont:	xft:Terminus:bold:size=14
+URxvt*font:	xft:Terminus:size=12
+URxvt*boldFont:	xft:Terminus:bold:size=12
 URxvt*fading:	15
 URxvt*scrollBar:	false
 URxvt.letterSpace: 1
 URxvt.lineSpace: 1
 URxvt.internalBorder: 6
-
