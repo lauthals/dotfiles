@@ -1,0 +1,7 @@
+#!/bin/bash
+echo "hallo"
+dconfFile="$HOME/.config/dconf/settings.ini"
+
+dconf dump / > "$dconfFile"
+yadm add "$dconfFile"
+echo $dconfFile
